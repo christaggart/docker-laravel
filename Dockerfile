@@ -22,6 +22,8 @@ RUN         composer --working-dir=/var/www/website install --prefer-dist
 ADD	    ./apache /etc/apache2/sites-enabled
 RUN         ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 
+EXPOSE 80
+
 # Now let's binarify this
 # So when we do "sudo docker run -d -p 8080:80 johnsn/laravel" 
 # it will execute apache2 and pass the values defined in CMD
